@@ -1,0 +1,715 @@
+network basics
+we are truly in an information society.  now more than ever, moving vast amounts of information quickly across great distances is one of our most pressing needs.  from small one-person entrepreneurial efforts, to the largest of corporations, more and more professional people are discovering that the only way to be successful in the '90s and beyond is to realize that technology is advancing at a break-neck pace---and they must somehow keep up.  likewise, researchers from all corners of the earth are finding that their work thrives in a networked environment.  immediate access to the work of colleagues and a virtual library of millions of volumes and thousands of papers affords them the ability to encorporate a body of knowledge heretofore unthinkable.  work groups can now conduct interactive conferences with each other, paying no heed to physical location---the possibilities are endless.
+you have at your fingertips the ability to talk in real-time with someone in japan, send a 2,000-word short story to a group of people who will critique it for the sheer pleasure of doing so, see if a macintosh sitting in a lab in canada is turned on, and find out if someone happens to be sitting in front of their computer logged on in australia, all inside of thirty minutes.  no airline or tardis, for that matter could ever match that travel itinerary.
+the largest problem people face when first using a network is grasping all that's available.  even seasoned users find themselves surprised when they discover a new service or feature that they'd never known even existed.  once acquainted with the terminology and sufficiently comfortable with making occasional mistakes, the learning process will drastically speed up.
+
+domains
+getting where you want to go can often be one of the more difficult aspects of using networks.  the variety of ways that places are named will probably leave a blank stare on your face at first.  don't fret there is a method to this apparent madness.
+if someone were to ask for a home address, they would probably expect a street, apartment, city, state, and zip code.  that's all the information the post office needs to deliver mail in a reasonably speedy fashion.  likewise, computer addresses have a structure to them.  the general form is
+a person's email address on a computer usersomewhere.domain a computer's name somewhere.domain
+the user portion is usually the person's account name on the system, though it doesn't have to be.  somewhere.domain tells you the name of a system or location, and what kind of organization it is. the trailing domain is often one of the following
+com usually a company or other commercial institution or organization, like convex computers convex.com.
+edu an educational institution, e.g. new york university, named nyu.edu.
+gov a government site for example, nasa is nasa.gov.
+mil a military site, like the air force af.mil.
+net gateways and other administrative hosts for a network it does not mean all of the hosts in a network. the matrix, 111.  one such gateway is near.net.
+org this is a domain reserved for private organizations, who don't comfortably fit in the other classes of domains.  one example is the electronic frontier foundation named eff.org.
+each country also has its own top-level domain.  for example, the us domain includes each of the fifty states.  other countries represented with domains include
+au australia ca canada fr france uk the united kingdom.  these also have sub-domains of things like ac.uk for academic sites and co.uk for commercial ones.
+fqdn fully qualified domain name
+the proper terminology for a site's domain name somewhere.domain above is its fully qualified domain name fqdn.  it is usually selected to give a clear indication of the site's organization or sponsoring agent.  for example, the massachusetts institute of technology's fqdn is mit.edu similarly, apple computer's domain name is apple.com.  while such obvious names are usually the norm, there are the occasional exceptions that are ambiguous enough to mislead---like vt.edu, which on first impulse one might surmise is an educational institution of some sort in vermont not so.  it's actually the domain name for virginia tech.  in most cases it's relatively easy to glean the meaning of a domain name---such confusion is far from the norm.
+
+internet numbers
+every single machine on the internet has a unique address, at least one address, possibly two or even three---but we won't  go into that. called its internet number or ip address.  it's actually a 32-bit number, but is most commonly represented as four numbers joined by periods ., like 147.31.254.130. this is sometimes also called a dotted quad there are literally thousands of different possible dotted quads.  the arpanet the mother to today's internet originally only had the capacity to have up to 256 systems on it because of the way each system was addressed.  in the early eighties, it became clear that things would fast outgrow such a small limit the 32-bit addressing method was born, freeing thousands of host numbers.
+each piece of an internet address like 192 is called an octet, representing one of four sets of eight bits.  the first two or three pieces e.g. 192.55.239 represent the network that a system is on, called its subnet.  for example, all of the computers for wesleyan university are in the subnet 129.133. they can have numbers like 129.133.10.10, 129.133.230.19, up to 65 thousand possible combinations possible computers.
+ip addresses and domain names aren't assigned arbitrarily---that would lead to unbelievable confusion.  an application must be filed with the network information center nic, either electronically to hostmasternic.ddn.mil or via regular mail.
+resolving names and numbers
+ok, computers can be referred to by either their fqdn or their internet address.  how can one user be expected to remember them all
+they aren't.  the internet is designed so that one can use either method.  since humans find it much more natural to deal with words than numbers in most cases, the fqdn for each host is mapped to its internet number.  each domain is served by a computer within that domain, which provides all of the necessary information to go from a domain name to an ip address, and vice-versa.  for example, when someone refers to foosun.bar.com, the resolver knows that it should ask the system foovax.bar.com about systems in bar.com.  it asks what internet address foosun.bar.com has if the name foosun.bar.com really exists, foovax will send back its number.  all of this magic happens behind the scenes.
+rarely will a user have to remember the internet number of a site although often you'll catch yourself remembering an apparently obscure number, simply because you've accessed the system frequently. however, you will remember a substantial number of fqdns.  it will eventually reach a point when you are able to make a reasonably accurate guess at what domain name a certain college, university, or company might have, given just their name.
+
+the networks
+internet the internet is a large network of networks.  there is no one network known as the internet rather, regional nets like suranet, prepnet, nearnet, et al., are all inter-connected nay, inter-networked together into one great living thing, communicating at amazing speeds with the tcpip protocol.  all activity takes place in real-time.
+uucp the uucp network is a loose association of systems all communicating with the uucp protocol.  uucp stands for unix-to-unix copy program'.  it's based on two systems connecting to each other at specified intervals, called polling, and executing any work scheduled for either of them.  historically most uucp was done with unix equipment, although the software's since been implemented on other platforms e.g. vms.  for example, the system oregano polls the system basil once every two hours.  if there's any mail waiting for oregano, basil will send it at that time likewise, oregano will at that time send any jobs waiting for basil.
+bitnet bitnet the because it's time network is comprised of systems connected by point-to-point links, all running the nje protocol. it's continued to grow, but has found itself suffering at the hands of the falling costs of internet connections.  also, a number of mail gateways are in place to reach users on other networks.
+the physical connection
+the actual connections between the various networks take a variety of forms.  the most prevalent for internet links are 56k leased lines dedicated telephone lines carrying 56kilobit-per-second connections and t1 links special phone lines with 1mbps connections.  also installed are t3 links, acting as backbones between major locations to carry a massive 45mbps load of traffic.
+these links are paid for by each institution to a local carrier for example, bell atlantic owns prepnet, the main provider in pennsylvania.  also available are slip connections, which carry internet traffic packets over high-speed modems.
+uucp links are made with modems for the most part, that run from 1200 baud all the way up to as high as 38.4kbps.  as was mentioned in the networks, the connections are of the store-and-forward variety.  also in use are internet-based uucp links as if things weren't already confusing enough.  the systems do their uucp traffic over tcpip connections, which give the uucp-based network some blindingly fast hops, resulting in better connectivity for the network as a whole.  uucp connections first became popular in the 1970's, and have remained in wide-spread use ever since.  only with uucp can joe smith correspond with someone across the country or around the world, for the price of a local telephone call.
+bitnet links mostly take the form of 9600bps modems connected from site to site.  often places have three or more links going the majority, however, look to upstream sites for their sole link to the network.
+the glory and the nothing of a name byron, churchill's grave
+
+electronic mail
+the desire to communicate is the essence of networking.  people have always wanted to correspond with each other in the fastest way possible, short of normal conversation.  electronic mail or email is the most prevalent application of this in computer networking.  it allows people to write back and forth without having to spend much time worrying about how the message actually gets delivered.  as technology grows closer and closer to being a common part of daily life, the need to understand the many ways it can be utilized and how it works, at least to some level, is vital. part of daily life as has been evidenced by the isdn effort, the need to understand the many ways it can be utilized and how it works, at least to some level, is vital.
+
+email addresses
+electronic mail is hinged around the concept of an address the section on networking basics made some reference to it while introducing domains.  your email address provides all of the information required to get a message to you from anywhere in the world.  an address doesn't necessarily have to go to a human being. it could be an archive server, see archive servers, for a description. a list of people, or even someone's pocket pager. these cases are the exception to the norm---mail to most addresses is read by human beings.
+
+symbolic cacophony
+email addresses usually appear in one of two forms---using the internet format which contains , an at-sign, or using the uucp format which contains , an exclamation point, also called a bang.  the latter of the two, uucp bang paths, is more restrictive, yet more clearly dictates how the mail will travel.
+to reach jim morrison on the system south.america.org, one would address the mail as jmsouth.america.org.  but if jim's account was on a uucp site named brazil, then his address would be braziljm.  if it's possible and one exists, try to use the internet form of an address bang paths can fail if an intermediate site in the path happens to be down.  there is a growing trend for uucp sites to register internet domain names, to help alleviate the problem of path failures.
+another symbol that enters the fray is ---it acts as an extra routing method.  for example, if the uucp site dream is connected to south.america.org, but doesn't have an internet domain name of its own, a user debbie on dream can be reached by writing to the address not smallexample
+debbiedreamsouth.america.org
+the form is significant.  this address says that the local system should first send the mail to south.america.org.  there the address debbiedream will turn into debbiedream, which will hopefully be a valid address.  then south.america.org will handle getting the mail to the host dream, where it will be delivered locally to debbie.
+all of the intricacies of email addressing methods are fully covered in the book  a directory of electronic mail addressing and networks published by o'reilly and associates, as part of their nutshell handbook series.  it is a must for any active email user. write to nutsora.com for ordering information.
+
+sending and receiving mail
+we'll make one quick diversion from being os-neuter here, to show you what it will look like to send and receive a mail message on a unix system.  check with your system administrator for specific instructions related to mail at your site.
+a person sending the author mail would probably do something like this
+mail brendancs.widener.edu subject print job's stuck
+i typed print babe.gif' and it didn't work why
+the next time the author checked his mail, he would see it listed in his mailbox as
+mail usrspoolmailbrendan 1 messages 1 new 1 unread u  1 joeuserfoo.widene tue may  5 2036   29956   print job's stuck 
+which gives information on the sender of the email, when it was sent, and the subject of the message.  he would probably use the reply command of unix mail to send this response
+r to joeuserfoo.widener.edu subject re print job's stuck
+you shouldn't print binary files like gifs to a printer
+brendan
+try sending yourself mail a few times, to get used to your system's mailer.  it'll save a lot of wasted aspirin for both you and your system administrator.
+
+anatomy of a mail header
+an electronic mail message has a specific structure to it that's common across every type of computer system. the standard is written down in rfc-822. see also  rfcs for more info on how to get copies of the various rfcs. a sample would be
+from bushhq.mil sat may 25 170601 1991 received from hq.mil by house.gov with smtp id aa21901 4.1smi for danhouse.gov sat, 25 may 91 170556 -0400 date sat, 25 may 91 170556 -0400 from the president bushhq.mil message-id 9105252105.aa06631hq.mil to dansenate.gov subject meeting
+hi dan .. we have a meeting at 930 a.m. with the joint chiefs. please don't oversleep this time.
+the first line, with from and the two lines for received are usually not very interesting.  they give the real address that the mail is coming from as opposed to the address you should reply to, which may look much different, and what places the mail went through to get to you.  over the internet, there is always at least one received header and usually no more than four or five.  when a message is sent using uucp, one received header is added for each system that the mail passes through.  this can often result in more than a dozen received headers.  while they help with dissecting problems in mail delivery, odds are the average user will never want to see them.  most mail programs will filter out this kind of cruft in a header.
+the date header contains the date and time the message was sent.  likewise, the good address as opposed to real address is laid out in the from header.  sometimes it won't include the full name of the person in this case the president, and may look different, but it should always contain an email address of some form.
+the message-id of a message is intended mainly for tracing mail routing, and is rarely of interest to normal users.  every message-id is guaranteed to be unique.
+to lists the email address or addresses of the recipients of the message.  there may be a cc header, listing additional addresses.  finally, a brief subject for the message goes in the subject header.
+the exact order of a message's headers may vary from system to system, but it will always include these fundamental headers that are vital to proper delivery.
+
+bounced mail
+when an email address is incorrect in some way the system's name is wrong, the domain doesn't exist, whatever, the mail system will bounce the message back to the sender, much the same way that the postal service does when you send a letter to a bad street address. the message will include the reason for the bounce a common error is addressing mail to an account name that doesn't exist.  for example, writing to lisa simpson at widener university's computer science department will fail, because she doesn't have an account. though if she asked, we'd certainly give her one.
+from mail delivery subsystem mailer-daemon date sat, 25 may 91 164514 -0400 to mggracie.com cc postmastercs.widener.edu subject returned mail user unknown
+transcript of session follows while talking to cs.widener.edu  rcpt tolsimpsoncs.widener.edu  550 lsimpsoncs.widener.edu... user unknown 550 lsimpson... user unknown
+as you can see, a carbon copy of the message the cc header entry was sent to the postmaster of widener's cs department.  the postmaster is responsible for maintaining a reliable mail system on his system.  usually postmasters at sites will attempt to aid you in getting your mail where it's supposed to go.  if a typing error was made, then try re-sending the message.  if you're sure that the address is correct, contact the postmaster of the site directly and ask him how to properly address it.
+the message also includes the text of the mail, so you don't have to retype everything you wrote.
+unsent message follows received by cs.widener.edu id aa06528 sat, 25 may 91 164514 -0400 date sat, 25 may 91 164514 -0400 from matt groening mggracie.com message-id 9105252045.aa06528gracie.com to lsimpsoncs.widener.edu subject scripting your future episodes reply-to writing-groupgracie.com
+verbiage
+the full text of the message is returned intact, including any headers that were added.  this can be cut out with an editor and fed right back into the mail system with a proper address, making redelivery a relatively painless process.
+
+mailing lists
+people that share common interests are inclined to discuss their hobby or interest at every available opportunity.  one modern way to aid in this exchange of information is by using a mailing list---usually an email address that redistributes all mail sent to it back out to a list of addresses.  for example, the sun managers mailing list of interest to people that administer computers manufactured by sun has the address sun-managerseecs.nwu.edu.  any mail sent to that address will explode out to each person named in a file maintained on a computer at northwestern university.
+administrative tasks sometimes referred to as administrivia are often handled through other addresses, typically with the suffix -request.  to continue the above, a request to be added to or deleted from the sun managers list should be sent to sun-managers-requesteecs.nwu.edu.
+when in doubt, try to write to the -request version of a mailing list address first the other people on the list aren't interested in your desire to be added or deleted, and can certainly do nothing to expedite your request.  often if the administrator of a list is busy remember, this is all peripheral to real jobs and real work, many users find it necessary to ask again and again, often with harsher and harsher language, to be removed from a list.  this does nothing more than waste traffic and bother everyone else receiving the messages.  if, after a reasonable amount of time, you still haven't succeeded to be removed from a mailing list, write to the postmaster at that site and see if they can help.
+exercise caution when replying to a message sent by a mailing list.  if you wish to respond to the author only, make sure that the only address you're replying to is that person, and not the entire list. often messages of the sort yes, i agree with you completely will appear on a list, boring the daylights out of the other readers.  likewise, if you explicitly do want to send the message to the whole list, you'll save yourself some time by checking to make sure it's indeed headed to the whole list and not a single person.
+a list of the currently available mailing lists is available in at least two places the first is in a file on ftp.nisc.sri.com called interest-groups under the netinfo directory. it's updated fairly regularly, but is large presently around 700k, so only get it every once in a while.  the other list is maintained by gene spafford spafcs.purdue.edu, and is posted in parts to the newsgroup news.lists semi-regularly. usenet news, for info on how to read that and other newsgroups.
+
+listservs
+on bitnet there's an automated system for maintaining discussion lists called the listserv.  rather than have an already harried and overworked human take care of additions and removals from a list, a program performs these and other tasks by responding to a set of user-driven commands.
+areas of interest are wide and varied---ethics-l deals with ethics in computing, while adnd-l has to do with a role-playing game.  a full list of the available bitnet lists can be obtained by writing to listservbitnic.bitnet with a body containing the command
+list global
+however, be sparing in your use of this---see if it's already on your system somewhere.  the reply is quite large.
+the most fundamental command is subscribe.  it will tell the listserv to add the sender to a specific list.  the usage is
+subscribe foo-l your real name
+it will respond with a message either saying that you've been added to the list, or that the request has been passed on to the system on which the list is actually maintained.
+the mate to subscribe is, naturally, unsubscribe.  it will remove a given address from a bitnet list.  it, along with all other listserv commands, can be abbreviated---subscribe as sub, unsubscribe as unsub, etc.  for a full list of the available listserv commands, write to listservbitnic.bitnet, giving it the command help.
+as an aside, there have been implementations of the listserv system for non-bitnet hosts more specifically, unix systems.  one of the most complete is available on cs.bu.edu in the directory publistserv.
+i made this letter longer than usual because i lack the time to make it shorter. pascal, provincial letters xvi
+
+anonymous ftp
+ftp file transfer protocol is the primary method of transferring files over the internet.  on many systems, it's also the name of the program that implements the protocol. given proper permission, it's possible to copy a file from a computer in south africa to one in los angeles at very fast speeds on the order of 5--10k per second. this normally requires either a user id on both systems or a special configuration set up by the system administrators.
+there is a good way around this restriction---the anonymous ftp service.  it essentially will let anyone in the world have access to a certain area of disk space in a non-threatening way.  with this, people can make files publicly available with little hassle.  some systems have dedicated entire disks or even entire computers to maintaining extensive archives of source code and information.  they include gatekeeper.dec.com digital, wuarchive.wustl.edu washington university in saint louis, and archive.cis.ohio-state.edu the ohio state university.
+the process involves the foreign user someone not on the system itself creating an ftp connection and logging into the system as the user anonymous, with an arbitrary password
+name foo.site.comyou anonymous password jmsouth.america.org
+custom and netiquette dictate that people respond to the password query with an email address so that the sites can track the level of ftp usage, if they desire.  addresses for information on email addresses.
+the speed of the transfer depends on the speed of the underlying link. a site that has a 9600bps slip connection will not get the same throughput as a system with a 56k leased line the physical connection, for more on what kinds of connections can exist in a network.  also, the traffic of all other users on that link will affect performance.  if there are thirty people all ftping from one site simultaneously, the load on the system in addition to the network connection will degrade the overall throughput of the transfer.
+
+ftp etiquette
+lest we forget, the internet is there for people to do work.  people using the network and the systems on it are doing so for a purpose, whether it be research, development, whatever.  any heavy activity takes away from the overall performance of the network as a whole.
+the effects of an ftp connection on a site and its link can vary the general rule of thumb is that any extra traffic created detracts from the ability of that site's users to perform their tasks.  to help be considerate of this, it's highly recommended that ftp sessions be held only after normal business hours for that site, preferably late at night.  the possible effects of a large transfer will be less destructive at 2 a.m. than 2 p.m.  also, remember that if it's past dinner time in maine, it's still early afternoon in california---think in terms of the current time at the site that's being visited, not of local time.
+
+basic commands
+while there have been many extensions to the various ftp clients out there, there is a de facto standard set that everyone expects to work.  for more specific information, read the manual for your specific ftp program.  this section will only skim the bare minimum of commands needed to operate an ftp session.
+creating the connection
+the actual command to use ftp will vary among operating systems for the sake of clarity, we'll use ftp here, since it's the most general form.
+there are two ways to connect to a system---using its hostname or its internet number.  using the hostname is usually preferred. however, some sites aren't able to resolve hostnames properly, and have no alternative.  we'll assume you're able to use hostnames for simplicity's sake.  the form is
+ftp somewhere.domain
+domains for help with reading and using domain names in the example below, somewhere.domain is ftp.uu.net.
+you must first know the name of the system you want to connect to. we'll use ftp.uu.net as an example.  on your system, type
+ftp ftp.uu.net
+the actual syntax will vary depending on the type of system the connection's being made from.  it will pause momentarily then respond with the message
+connected to ftp.uu.net.
+and an initial prompt will appear
+220 uunet ftp server version 5.100 mon feb 11 171328 est 1991 ready. name ftp.uu.netjm
+to which you should respond with anonymous
+220 uunet ftp server version 5.100 mon feb 11 171328 est 1991 ready. name ftp.uu.netjm anonymous
+the system will then prompt you for a password as noted previously, a good response is your email address
+331 guest login ok, send ident as password. password jmsouth.america.org 230 guest login ok, access restrictions apply. ftp
+the password itself will not echo.  this is to protect a user's security when he or she is using a real account to ftp files between machines.  once you reach the ftp prompt, you know you're logged in and ready to go.
+notice the ftp.uu.netjoe in the name prompt  that's another clue that anonymous ftp is special ftp expects a normal user accounts to be used for transfers.
+dir at the ftp prompt, you can type a number of commands to perform various functions.  one example is dir---it will list the files in the current directory. continuing the example from above
+ftp dir
+200 port command successful. 150 opening ascii mode data connection for binls. total 3116 drwxr-xr-x  2 7        21            512 nov 21  1988 .forward -rw-rw-r--  1 7        11              0 jun 23  1988 .hushlogin drwxrwxr-x  2 0        21            512 jun  4  1990 census drwxrwxr-x  2 0        120           512 jan  8 0936 clarinet ... etc etc ... -rw-rw-r--  1 7        14          42390 may 20 0224 newthisweek.z ... etc etc ... -rw-rw-r--  1 7        14        2018887 may 21 0101 uumap.tar.z drwxrwxr-x  2 7        6            1024 may 11 1058 uunet-info
+226 transfer complete. 5414 bytes received in 1.1 seconds 4.9 kbytess ftp
+the file newthisweek.z was specifically included because we'll be using it later.  just for general information, it happens to be a listing of all of the files added to uunet's archives during the past week.
+the directory shown is on a machine running the unix operating system---the dir command will produce different results on other operating systems e.g. tops, vms, et al..  learning to recognize different formats will take some time.  after a few weeks of traversing the internet, it proves easier to see, for example, how large a file is on an operating system you're otherwise not acquainted with.
+with many ftp implementations, it's also possible to take the output of dir and put it into a file on the local system with
+ftp dir n outfilename
+the contents of which can then be read outside of the live ftp connection this is particularly useful for systems with very long directories like ftp.uu.net.  the above example would put the names of every file that begins with an n into the local file outfilename.
+
+cd
+at the beginning of an ftp session, the user is in a top-level directory.  most things are in directories below it e.g. pub.  to change the current directory, one uses the cd command.  to change to the directory pub, for example, one would type
+ftp cd pub
+which would elicit the response
+250 cwd command successful.
+meaning the change working directory command cd worked properly.  moving up a directory is more system-specific---in unix use the command cd .., and in vms, cd -.
+get and put
+the actual transfer is performed with the get and put commands.  to get a file from the remote computer to the local system, the command takes the form
+ftp get filename
+where filename is the file on the remote system.  again using ftp.uu.net as an example, the file newthisweek.z can be retrieved with
+ftp get newthisweek.z 200 port command successful. 150 opening ascii mode data connection for newthisweek.z 42390 bytes. 226 transfer complete. local newthisweek.z remote newthisweek.z 42553 bytes received in 6.9 seconds 6 kbytess ftp
+the section below on using binary mode instead of ascii will describe why this particular choice will result in a corrupt and subsequently unusable file.
+if, for some reason, you want to save a file under a different name e.g. your system can only have 14-character filenames, or can only have one dot in the name, you can specify what the local filename should be by providing get with an additional argument
+ftp get newthisweek.z uunet-new
+which will place the contents of the file newthisweek.z in uunet-new on the local system.
+the transfer works the other way, too.  the put command will transfer a file from the local system to the remote system.  if the permissions are set up for an ftp session to write to a remote directory, a file can be sent with
+
+ftp put filename
+as with get, put will take a third argument, letting you specify a different name for the file on the remote system.
+
+ascii vs binary
+in the example above, the file newthisweek.z was transferred, but supposedly not correctly.  the reason is this in a normal ascii transfer the default, certain characters are translated between systems, to help make text files more readable.  however, when binary files those containing non-ascii characters are transferred, this translation should not take place.  one example is a binary program---a few changed characters can render it completely useless.
+to avoid this problem, it's possible to be in one of two modes---ascii or binary.  in binary mode, the file isn't translated in any way. what's on the remote system is precisely what's received.  the commands to go between the two modes are
+ftp ascii 200 type set to a.   note the a, which signifies ascii mode.
+ftp binary 200 type set to i.   set to image format, for pure binary transfers.
+note that each command need only be done once to take effect if the user types binary, all transfers in that session are done in binary mode that is, unless ascii is typed later.
+the transfer of newthisweek.z will work if done as
+ftp binary 200 type set to i. ftp get newthisweek.z 200 port command successful. 150 opening binary mode data connection for newthisweek.z 42390 bytes. 226 transfer complete. local newthisweek.z remote newthisweek.z 42390 bytes received in 7.2 seconds 5.8 kbytess
+note the file size 42390 is different from that done in ascii mode 42553 bytes and the number 42390 matches the one in the listing of uunet's top directory.  we can be relatively sure that we've received the file without any problems.
+
+mget and mput
+the commands mget and mput allow for multiple file transfers using wildcards to get several files, or a whole set of files at once, rather than having to do it manually one by one.  for example, to get all files that begin with the letter f, one would type
+ftp mget f
+similarly, to put all of the local files that end with .c
+ftp mput .c
+rather than reiterate what's been written a hundred times before, consult a local manual for more information on wildcard matching every dos manual, for example, has a section on it.
+normally, ftp assumes a user wants to be prompted for every file in a mget or mput operation.  you'll often need to get a whole set of files and not have each of them confirmed---you know they're all right.  in that case, use the prompt command to turn the queries off.
+ftp prompt interactive mode off.
+likewise, to turn it back on, the prompt command should simply be issued again.
+joe granrose's list monthly, joe granrose odinpilot.njin.net posts to usenet usenet news an extensive list of sites offering anonymous ftp service.  it's available in a number of ways
+the usenet groups comp.misc and comp.sources.wanted
+anonymous ftp from pilot.njin.net 128.6.7.38, in pubftp-list.
+write to odinpilot.njin.net with a subject line of listserv-request and a message body of send help.  please don't bother joe with your requests---the server will provide you with the list.
+the archie server archie is always in lowercase
+a group of people at mcgill university in canada got together and created a query system called archie.  it was originally formed to be a quick and easy way to scan the offerings of the many anonymous ftp sites that are maintained around the world.  as time progressed, archie grew to include other valuable services as well.
+the archie service is accessible through an interactive telnet session, email queries, and command-line and x-window clients.  the email responses can be used along with ftpmail servers for those not on the internet.  ftp-by-mail servers, for info on using ftpmail servers.
+
+using archie today
+currently, archie tracks the contents of over 800 anonymous ftp archive sites containing over a million files stored across the internet.  collectively, these files represent well over 50 gigabytes of information, with new entries being added daily.
+the archie server automatically updates the listing information from each site about once a month.  this avoids constantly updating the databases, which could waste network resources, yet ensures that the information on each site's holdings is reasonably up to date.
+to access archie interactively, telnet to one of the existing servers. see telnet, for notes on using the telnet program. they include
+archie.ans.net new york, usa archie.rutgers.edu new jersey, usa archie.sura.net maryland, usa archie.unl.edu nebraska, usa archie.mcgill.ca the first archie server, in canada archie.funet.fi finland archie.au australia archie.doc.ic.ac.uk great britain
+at the login prompt of one of the servers, enter archie to log in. a greeting will be displayed, detailing information about ongoing work in the archie project the user will be left at a archie prompt, at which he may enter commands.  using help will yield instructions on using the prog command to make queries, set to control various aspects of the server's operation, et al.  type quit at the prompt to leave archie.  typing the query prog vine.tar.z will yield a list of the systems that offer the source to the x-windows program vine a piece of the information returned looks like
+host ftp.uu.net   137.39.1.9 last updated 1030  7 jan 1992
+location packagesxcontrib file      rw-r--r--     15548  oct  8 2029   vine.tar.z
+host nic.funet.fi   128.214.6.100 last updated 0507  4 jan 1992
+location pubx11contrib file      rw-rw-r--     15548  nov  8 0325   vine.tar.z
+
+archie clients
+there are two main-stream archie clients, one called naturally enough archie, the other xarchie for x-windows.  they query the archie databases and yield a list of systems that have the requested files available for anonymous ftp, without requiring an interactive session to the server.  for example, to find the same information you tried with the server command prog, you could type
+archie vine.tar.z host athene.uni-paderborn.de location localx11morecontrib file -rw-r--r--      18854  nov 15 1990  vine.tar.z
+host emx.utexas.edu location pubmntsourcegames file -rw-r--r--      12019  may  7 1988  vine.tar.z
+host export.lcs.mit.edu location contrib file -rw-r--r--      15548  oct  9 0029  vine.tar.z
+note that your system administrator may not have installed the archie clients yet the source is available on each of the archie servers, in the directory archieclients.
+using the x-windows client is much more intuitive---if it's installed, just read its man page and give it a whirl.  it's essential for the networked desktop.
+
+mailing archie
+users limited to email connectivity to the internet should send a message to the address archiearchie.mcgill.ca with the single word help in the body of the message.  an email message will be returned explaining how to use the email archie server, along with the details of using ftpmail.  most of the commands offered by the telnet interface can be used with the mail server.
+
+the whatis database
+in addition to offering access to anonymous ftp listings, archie also permits access to the whatis description database.  it includes the names and brief synopses for over 3,500 public domain software packages, datasets and informational documents located on the internet.
+additional whatis databases are scheduled to be added in the future. planned offerings include listings for the names and locations of online library catalog programs, the names of publicly accessible electronic mailing lists, compilations of frequently asked questions lists, and archive sites for the most popular usenet newsgroups. suggestions for additional descriptions or locations databases are welcomed and should be sent to the archie developers at archie-lcs.mcgill.ca.
+was fur plundern what a place to plunder gebhard leberecht blucher
+
+usenet news
+original from chipcount.tct.com chip salzenberg most recent change 19 may 1991 by spafcs.purdue.edu gene spafford
+the first thing to understand about usenet is that it is widely misunderstood.  every day on usenet the blind men and the elephant phenomenon appears, in spades.  in the opinion of the author, more flame wars rabid arguments arise because of a lack of understanding of the nature of usenet than from any other source.  and consider that such flame wars arise, of necessity, among people who are on usenet.  imagine, then, how poorly understood usenet must be by those outside
+no essay on the nature of usenet can ignore the erroneous impressions held by many usenet users.  therefore, this section will treat falsehoods first.  keep reading for truth.  beauty, alas, is not relevant to usenet.
+what usenet is
+usenet is the set of machines that exchange articles tagged with one or more universally-recognized labels, called newsgroups or groups for short.  note that the term newsgroup is correct, while area, base, board, bboard, conference, round table, sig, etc. are incorrect.  if you want to be understood, be accurate.
+the diversity of usenet
+if the above definition of usenet sounds vague, that's because it is. it is almost impossible to generalize over all usenet sites in any non-trivial way.  usenet encompasses government agencies, large universities, high schools, businesses of all sizes, home computers of all descriptions, etc.
+every administrator controls his own site.  no one has any real control over any site but his own.  the administrator gets his power from the owner of the system he administers.  as long as the owner is happy with the job the administrator is doing, he can do whatever he pleases, up to and including cutting off usenet entirely.  c'est la vie.
+what usenet is not
+usenet is not an organization. usenet has no central authority.  in fact, it has no central anything. there is a vague notion of upstream and downstream related to the direction of high-volume news flow.  it follows that, to the extent that upstream sites decide what traffic they will carry for their downstream neighbors, that upstream sites have some influence on their neighbors.  but such influence is usually easy to circumvent, and heavy-handed manipulation typically results in a backlash of resentment.
+usenet is not a democracy. a democracy can be loosely defined as government of the people, by the people, for the people.  however, as explained above, usenet is not an organization, and only an organization can be run as a democracy.  even a democracy must be organized, for if it lacks a means of enforcing the peoples' wishes, then it may as well not exist.
+some people wish that usenet were a democracy.  many people pretend that it is.  both groups are sadly deluded.
+usenet is not fair. after all, who shall decide what's fair  for that matter, if someone is behaving unfairly, who's going to stop him  neither you nor i, that's certain.
+usenet is not a right. some people misunderstand their local right of freedom of speech to mean that they have a legal right to use others' computers to say what they wish in whatever way they wish, and the owners of said computers have no right to stop them.
+those people are wrong.  freedom of speech also means freedom not to speak if i choose not to use my computer to aid your speech, that is my right.  freedom of the press belongs to those who own one.
+usenet is not a public utility. some usenet sites are publicly funded or subsidized.  most of them, by plain count, are not.  there is no government monopoly on usenet, and little or no control.
+usenet is not a commercial network. many usenet sites are academic or government organizations in fact, usenet originated in academia.  therefore, there is a usenet custom of keeping commercial traffic to a minimum.  if such commercial traffic is generally considered worth carrying, then it may be grudgingly tolerated.  even so, it is usually separated somehow from non-commercial traffic see comp.newprod.
+usenet is not the internet. the internet is a wide-ranging network, parts of which are subsidized by various governments.  the internet carries many kinds of traffic usenet is only one of them.  and the internet is only one of the various networks carrying usenet traffic.
+usenet is not a unix network, nor even an ascii network.
+don't assume that everyone is using rn on a unix machine.  there are vaxen running vms, ibm mainframes, amigas, and ms-dos pcs reading and posting to usenet.  and, yes, some of them use shudder ebcdic. ignore them if you like, but they're out there.
+usenet is not software. there are dozens of software packages used at various sites to transport and read usenet articles.  so no one program or package can be called the usenet software.
+software designed to support usenet traffic can be and is used for other kinds of communication, usually without risk of mixing the two. such private communication networks are typically kept distinct from usenet by the invention of newsgroup names different from the universally-recognized ones.
+usenet is not a uucp network.
+uucp is a protocol some might say protocol suite, but that's a technical point for sending data over point-to-point connections, typically using dialup modems.  usenet is only one of the various kinds of traffic carried via uucp, and uucp is only one of the various transports carrying usenet traffic.
+well, enough negativity.
+
+propagation of news
+in the old days, when uucp over long-distance dialup lines was the dominant means of article transmission, a few well-connected sites had real influence in determining which newsgroups would be carried where. those sites called themselves the backbone.
+but things have changed.  nowadays, even the smallest internet site has connectivity the likes of which the backbone admin of yesteryear could only dream.  in addition, in the u.s., the advent of cheaper long-distance calls and high-speed modems has made long-distance usenet feeds thinkable for smaller companies.  there is only one pre-eminent uucp transport site today in the u.s., namely uunet.  but uunet isn't a player in the propagation wars, because it never refuses any traffic---it gets paid by the minute, after all to refuse based on content would jeopardize its legal status as an enhanced service provider.
+all of the above applies to the u.s.  in europe, different cost structures favored the creation of strictly controlled hierarchical organizations with central registries.  this is all very unlike the traditional mode of u.s. sites pick a name, get the software, get a feed, you're on.  europe's benign monopolies, long uncontested, now face competition from looser organizations patterned after the u.s. model.
+
+group creation
+as discussed above, usenet is not a democracy.  nevertheless, currently the most popular way to create a new newsgroup involves a vote to determine popular support for and opposition to a proposed newsgroup. newsgroup creation, for detailed instructions and guidelines on the process involved in making a newsgroup.
+if you follow the guidelines, it is probable that your group will be created and will be widely propagated.  however, due to the nature of usenet, there is no way for any user to enforce the results of a newsgroup vote or any other decision, for that matter.  therefore, for your new newsgroup to be propagated widely, you must not only follow the letter of the guidelines you must also follow its spirit. and you must not allow even a whiff of shady dealings or dirty tricks to mar the vote.
+so, you may ask how is a new user supposed to know anything about the spirit of the guidelines  obviously, she can't.  this fact leads inexorably to the following recommendation
+if you're a new user, don't try to create a new newsgroup alone.
+if you have a good newsgroup idea, then read the news.groups newsgroup for a while six months, at least to find out how things work.  if you're too impatient to wait six months, then you really need to learn read news.groups for a year instead.  if you just can't wait, find a usenet old hand to run the vote for you.
+readers may think this advice unnecessarily strict.  ignore it at your peril.  it is embarrassing to speak before learning.  it is foolish to jump into a society you don't understand with your mouth open.  and it is futile to try to force your will on people who can tune you out with the press of a key.
+if you're unhappy... property rights being what they are, there is no higher authority on usenet than the people who own the machines on which usenet traffic is carried.  if the owner of the machine you use says, we will not carry alt.sex on this machine, and you are not happy with that order, you have no usenet recourse.  what can we outsiders do, after all
+that doesn't mean you are without options.  depending on the nature of your site, you may have some internal political recourse.  or you might find external pressure helpful.  or, with a minimal investment, you can get a feed of your own from somewhere else. computers capable of taking usenet feeds are down in the 500 range now, unix-capable boxes are going for under 2000, and there are at least two unix lookalikes in the 100 price range.
+no matter what, appealing to usenet won't help.  even if those who read such an appeal regarding system administration are sympathetic to your cause, they will almost certainly have even less influence at your site than you do.
+by the same token, if you don't like what some user at another site is doing, only the administrator andor owner of that site have any authority to do anything about it.  persuade them that the user in question is a problem for them, and they might do something if they feel like it.  if the user in question is the administrator or owner of the site from which he or she posts, forget it you can't win. arrange for your newsreading software to ignore articles from him or her if you can, and chalk one up to experience.
+
+the history of usenet the abcs
+in the beginning, there were conversations, and they were good.  then came usenet in 1979, shortly after the release of v7 unix with uucp and it was better.  two duke university grad students in north carolina, tom truscott and jim ellis, thought of hooking computers together to exchange information with the unix community.  steve bellovin, a grad student at the university of north carolina, put together the first version of the news software using shell scripts and installed it on the first two sites unc and duke. at the beginning of 1980 the network consisted of those two sites and phs another machine at duke, and was described at the january 1980 usenix conference in boulder, co. the usenix conferences are semi-annual meetings where members  of the usenix association, a group of unix enthusiasts, meet and trade notes. steve bellovin later rewrote the scripts into c programs, but they were never released beyond unc and duke.  shortly thereafter, steve daniel did another implementation in the c programming language for public distribution.  tom truscott made further modifications, and this became the a news release.
+in 1981 at the university of california at berkeley, grad student mark horton and high school student matt glickman rewrote the news software to add functionality and to cope with the ever increasing volume of news---a news was intended for only a few articles per group per day.  this rewrite was the b news version.  the first public release was version 2.1 in 1982 all versions before 2.1 were considered in beta test.  as the net grew, the news software was expanded and modified.  the last version maintained and released primarily by mark was 2.10.1.
+rick adams, then at the center for seismic studies, took over coordination of the maintenance and enhancement of the news software with the 2.10.2 release in 1984.  by this time, the increasing volume of news was becoming a concern, and the mechanism for moderated groups was added to the software at 2.10.2.  moderated groups were inspired by arpa mailing lists and experience with other bulletin board systems.  in late 1986, version 2.11 of news was released, including a number of changes to support a new naming structure for newsgroups, enhanced batching and compression, enhanced ihavesendme control messages, and other features.  the current release of news is 2.11, patchlevel 19.
+a new version of news, becoming known as c news, has been developed at the university of toronto by geoff collyer and henry spencer.  this version is a rewrite of the lowest levels of news to increase article processing speed, decrease article expiration processing and improve the reliability of the news system through better locking, etc.  the package was released to the net in the autumn of 1987.  for more information, see the paper news need not be slow, published in the winter 1987 usenix technical conference proceedings.
+usenet software has also been ported to a number of platforms, from the amiga and ibm pcs all the way to minicomputers and mainframes.
+hierarchies newsgroups are organized according to their specific areas of concentration.  since the groups are in a tree structure, the various areas are called hierarchies.  there are seven major categories
+comp topics of interest to both computer professionals and hobbyists, including topics in computer science, software sources, and information on hardware and software systems.
+misc group addressing themes not easily classified into any of the other headings or which incorporate themes from multiple categories. subjects include fitness, job-hunting, law, and investments.
+sci discussions marked by special knowledge relating to research in or application of the established sciences.
+soc groups primarily addressing social issues and socializing.  included are discussions related to many different world cultures.
+talk groups largely debate-oriented and tending to feature long discussions without resolution and without appreciable amounts of generally useful information.
+news groups concerned with the news network, group maintenance, and software.
+rec groups oriented towards hobbies and recreational activities
+these world newsgroups are usually circulated around the entire usenet---this implies world-wide distribution.  not all groups actually enjoy such wide distribution, however.  the european usenet and eunet sites take only a selected subset of the more technical groups, and controversial noise groups are often not carried by many sites in the u.s. and canada these groups are primarily under the talk and soc classifications.  many sites do not carry some or all of the comp.binaries groups because of the typically large size of the posts in them being actual executable programs.
+also available are a number of alternative hierarchies
+alt true anarchy anything and everything can and does appear subjects include sex, the simpsons, and privacy.
+gnu groups concentrating on interests and software with the gnu project of the free software foundation. for further info on what the fsf is, fsf.
+biz business-related groups.
+
+moderated vs unmoderated
+some newsgroups insist that the discussion remain focused and on-target to serve this need, moderated groups came to be.  all articles posted to a moderated group get mailed to the group's moderator.  he or she periodically hopefully sooner than later reviews the posts, and then either posts them individually to usenet, or posts a composite digest of the articles for the past day or two.  this is how many mailing list gateways work for example, the risks digest.
+news.groups  news.announce.newgroups
+being a good net.citizen includes being involved in the continuing growth and evolution of the usenet system.  one part of this involvement includes following the discussion in the groups news.groups and the notes in news.announce.newgroups. it is there that discussion goes on about the creation of new groups and destruction of inactive ones.  every person on usenet is allowed and encouraged to vote on the creation of a newsgroup.
+
+how usenet works
+the transmission of usenet news is entirely cooperative.  feeds are generally provided out of good will and the desire to distribute news everywhere.  there are places which provide feeds for a fee e.g. uunet, but for the large part no exchange of money is involved.
+there are two major transport methods, uucp and nntp.  the first is mainly modem-based and involves the normal charges for telephone calls.  the second, nntp, is the primary method for distributing news over the internet.
+with uucp, news is stored in batches on a site until the neighbor calls to receive the articles, or the feed site happens to call.  a list of groups which the neighbor wishes to receive is maintained on the feed site.  the cnews system compresses its batches, which can dramatically reduce the transmission time necessary for a relatively heavy newsfeed.
+nntp, on the other hand, offers a little more latitude with how news is sent.  the traditional store-and-forward method is, of course, available.  given the real-time nature of the internet, though, other methods have been devised.  programs now keep constant connections with their news neighbors, sending news nearly instantaneously, and can handle dozens of simultaneous feeds, both incoming and outgoing.
+the transmission of a usenet article is centered around the unique message-id header.  when an nntp site offers an article to a neighbor, it says it has that specific message id.  if the neighbor finds it hasn't received the article yet, it tells the feed to send it through this is repeated for each and every article that's waiting for the neighbor.  using unique ids helps prevent a system from receiving five copies of an article from each of its five news neighbors, for example.
+further information on how usenet works with relation to the various transports is available in the documentation for the cnews and nntp packages, as well as in rfc-1036, the standard for interchange of usenet messages and rfc-977, network news transfer protocol a proposed standard for the stream-based transmission of news.  the rfcs do tend to be rather dry reading, particularly to the new user.
+
+mail gateways
+a natural progression is for usenet news and electronic mailing lists to somehow become merged---which they have, in the form of news gateways.  many mailing lists are set up to reflect messages not only to the readership of the list, but also into a newsgroup. likewise, posts to a newsgroup can be sent to the moderator of the mailing list, or to the entire mailing list.  some examples of this in action are comp.risks the risks digest and comp.dcom.telecom the telecom digest.
+this method of propagating mailing list traffic has helped solve the problem of a single message being delivered to a number of people at the same site---instead, anyone can just subscribe to the group. also, mailing list maintenance is lowered substantially, since the moderators don't have to be constantly removing and adding users to and from the list.  instead, the people can read and not read the newsgroup at their leisure.
+from dear emily postnews by brad templeton usenet netiquette
+there are many traditions with usenet, not the least of which is dubbed netiquette---being polite and considerate of others.  if you follow a few basic guidelines, you, and everyone that reads your posts, will be much happier in the long run.
+
+signatures
+at the end of most articles is a small blurb called a person's signature.  in unix this file is named .signature in the person's login directory---it will vary for other operating systems. it exists to provide information about how to get in touch with the person posting the article, including their email address, phone number, address, or where they're located.  even so, signatures have become the graffiti of computers.  people put song lyrics, pictures, philosophical quotes, even advertisements in their .sigs. note, however, that advertising in your signature will more often than not get you flamed until you take it out.
+four lines will suffice---more is just extra garbage for usenet sites to carry along with your article, which is supposed to be the intended focus of the reader.  netiquette dictates limiting oneself to this quota of four---some people make signatures that are ten lines or even more, including elaborate ascii drawings of their hand-written signature or faces or even the space shuttle.  this is not cute, and will bother people to no end.
+similarly, it's not necessary to include your signature---if you forget to append it to an article, don't worry about it.  the article's just as good as it ever would be, and contains everything you should want to say.  don't re-post the article just to include the signature.
+posting personal messages
+if mail to a person doesn't make it through, avoid posting the message to a newsgroup.  even if the likelihood of that person reading the group is very high, all of the other people reading the articles don't give a whit what you have to say to jim morrison.  simply wait for the person to post again and double-check the address, or get in touch with your system administrator and see if it's a problem with local email delivery.  it may also turn out that their site is down or is having problems, in which case it's just necessary to wait until things return to normal before contacting jim.
+
+posting mail
+in the interests of privacy, it's considered extremely bad taste to post any email that someone may have sent, unless they explicitly give you permission to redistribute it.  while the legal issues can be heavily debated, most everyone agrees that email should be treated as anything one would receive via normal snailmail, the slang for the  normal land and air postal service. , with all of the assumed rights that are carried with it.
+
+test messages
+many people, particularly new users, want to try out posting before actually taking part in discussions.  often the mechanics of getting messages out is the most difficult part of usenet.  to this end, many, many users find it necessary to post their tests to normal groups for example, news.admin or comp.mail.misc.  this is considered a major netiquette faux pas in the usenet world. there are a number of groups available, called test groups, that exist solely for the purpose of trying out a news system, reader, or even new signature.  they include
+alt.test gnu.gnusenet.test misc.test
+some of which will generate auto-magic replies to your posts to let you know they made it through.  there are certain denizens of usenet that frequent the test groups to help new users out.  they respond to the posts, often including the article so the poster can see how it got to the person's site.  also, many regional hierarchies have test groups, like phl.test in philadelphia.
+by all means, experiment and test---just do it in its proper place.
+
+famous people appearing
+every once in a while, someone says that a celebrity is accessible through the net or, even more entertaining, an article is forged to appear to be coming from that celebrity.  one example is stephen spielberg---the rec.arts.movies readership was in an uproar for two weeks following a couple of posts supposedly made by mr. spielberg.  some detective work revealed it to be a hoax.
+there are a few well-known people that are acquainted with usenet and computers in general---but the overwhelming majority are just normal people.  one should act with skepticism whenever a notable personality is seen in a newsgroup.
+
+summaries
+authors of articles occasionally say that readers should reply by mail and they'll summarize.  accordingly, readers should do just that---reply via mail.  responding with a followup article to such an article defeats the intention of the author.  she, in a few days, will post one article containing the highlights of the responses she received.  by following up to the whole group, the author may not read what you have to say.
+when creating a summary of the replies to a post, try to make it as reader-friendly as possible.  avoid just putting all of the messages received into one big file.  rather, take some time and edit the messages into a form that contains the essential information that other readers would be interested in.
+also, sometimes people will respond but request to remain anonymous one example is the employees of a corporation that feel the information's not proprietary, but at the same time want to protect themselves from political backlash.  summaries should honor this request accordingly by listing the from address as anonymous or address withheld by request.
+
+quoting
+when following up to an article, many newsreaders provide the facility to quote the original article with each line prefixed by  , as in
+in article 1232foo.bar.com, sharonfoo.bar.com wrote  i agree, i think that basketweaving's really catching on,  particularly in pennsylvania.  here's a list of every person  in pa that currently engages in it publicly line ... etc ...
+this is a severe example potentially a horribly long article, but proves a point.  when you quote another person, edit out whatever isn't directly applicable to your reply. but not  changing their words, of course.  this gives the reader of the new article a better idea of what points you were addressing.  by including the entire article, you'll only annoy those reading it.  also, signatures in the original aren't necessary the readers already know who wrote it by the attribution.
+avoid being tedious with responses---rather than pick apart an article, address it in parts or as a whole.  addressing practically each and every word in an article only proves that the person responding has absolutely nothing better to do with his time.
+if a war starts insults and personal comments get thrown back and forth, take it into email---exchange email with the person you're arguing with.  no one enjoys watching people bicker incessantly.
+
+crossposting
+the newsgroups line isn't limited to just one group---an article can be posted in a list of groups.  for instance, the line
+newsgroups sci.space,comp.simulation
+posts the article to both the groups sci.space and comp.simulation. it's usually safe to crosspost to up to three or four groups.  to list more than that is considered excessive noise.
+it's also suggested that if an article is crossposted a followup-to header be included.  it should name the group to which all additional discussion should be directed to.  for the above example a possible followup-to would be
+followup-to sci.space
+which would make all followups automatically be posted to just sci.space, rather than both sci.space and comp.simulation.  if every response made with a newsreader's followup command should go to the person posting the article no matter what, there's also a mechanism worked in to accommodate.  the followup-to header should contain the single word poster
+
+followup-to poster
+certain newsreaders will use this to sense that a reply should never be posted back onto the net.  this is often used with questions that will yield a summary of information later, a vote, or an advertisement.
+
+recent news
+one should avoid posting recent events---sports scores, a plane crash, or whatever people will see on the evening news or read in the morning paper.  by the time the article has propagated across all of usenet, the news value of the article will have become stale. this is one case for the argument that usenet news is a misnomer. note that the clarinet news service clarinet offers news items in a usenet format as a precise alternative to the morning paper,  et. al.
+
+quality of postings
+how you write and present yourself in your articles is important.  if you have terrible spelling, keep a dictionary near by.  if you have trouble with grammar and punctuation, try to get a book on english grammar and composition found in many bookstores and at garage sales.  by all means pay attention to what you say---it makes you who you are on the net.
+likewise, try to be clear in what you ask.  ambiguous or vague questions often lead to no response at all, leaving the poster discouraged.  give as much essential information as you feel is necessary to let people help you, but keep it within limits.  for instance, you should probably include the operating system of your computer in the post if it's needed, but don't tell everybody what peripherals you have hanging off of it.
+
+useful subjects
+the subject line of an article is what will first attract people to read it---if it's vague or doesn't describe what's contained within, no one will read the article.  at the same time, subject lines that're too wordy tend to be irritating.  for example
+good subject building emacs on a sun sparc under 4.1
+good subject tryin' to find waldo in nj.
+bad subject i can't get emacs to work 
+bad subject i'm desperately in search of the honorable mr. waldo in the state of...
+simply put, try to think of what will best help the reader when he or she encounters your article in a newsreading session.
+
+tone of voice
+since common computers can't portray the inflection or tone in a person's voice, how articles are worded can directly affect the response to them.  if you say
+anybody using a vic-20 should go buy themselves a life.
+you'll definitely get some responses---telling you to take a leap. rather than be inflammatory, phrase your articles in a way that rationally expresses your opinion, like
+what're the practical uses of a vic-20 these days
+which presents yourself as a much more level-headed individual.
+also, what case upper or lower you use can indicate how you're trying to speak---netiquette dictates that if you use all capital letters, people will think you're shouting.  write as you would in a normal letter to a friend, following traditional rules of english or whatever language you happen to speak.
+
+computer religion
+no matter what kind of computer a person is using, theirs is always the best and most efficient of them all.  posting articles asking questions like what computer should i buy an atari st or an amiga will lead only to fervent arguments over the merits and drawbacks of each brand.  don't even ask the net---go to a local user group, or do some research of your own like reading some magazine reviews.  trying to say one computer is somehow better than another is a moot point.
+
+the anatomy of an article
+
+frequently asked questions
+a number of groups include frequently asked question faq lists, which give the answers to questions or points that have been raised time and time again in a newsgroup.  they're intended to help cut down on the redundant traffic in a group.  for example, in the newsgroup alt.tv.simpsons, one recurring question is did you notice that there's a different blackboard opening at the beginning of every simpsons episode  as a result, it's part of the faq for that group.
+usually, faq lists are posted at the beginning of each month, and are set to expire one month later when, supposedly, the next faq will be published.  nearly every faq is also crossposted to news.answers, which is used as a usenet repository for them.
+the pit-manager archive
+mit, with jonathan kamens, has graciously dedicated a machine to the archiving and storage of the various periodic postings that are peppered throughout the various usenet groups. to access them, ftp to the system pit-manager.mit.edu and look in the directory pubusenet.
+be it true or false, so it be news. ben jonson, news from the new world
+
+telnet
+telnet is the main internet protocol for creating a connection with a remote machine.  it gives the user the opportunity to be on one computer system and do work on another, which may be across the street or thousands of miles away.  where modems are limited, in the majority, by the quality of telephone lines and a single connection, telnet provides a connection that's error-free and nearly always faster than the latest conventional modems.
+using telnet
+as with ftp anonymous ftp, the actual command for negotiating a telnet connection varies from system to system.  the most common is telnet itself, though.  it takes the form of
+telnet somewhere.domain
+to be safe, we'll use your local system as a working example.  by now, you hopefully know your site's domain name.  if not, ask or try to figure it out.  you'll not get by without it.
+to open the connection, type
+telnet your.system.name
+if the system were wubba.cs.widener.edu, for example, the command would look like
+telnet wubba.cs.widener.edu
+the system will respond with something similar to
+trying 147.31.254.999... connected to wubba.cs.widener.edu. escape character is ''.
+the escape character, in this example  control-, is the character that will let you go back to the local system to close the connection, suspend it, etc.  to close this connection, the user would type , and respond to the telnet prompt with the command close.  local documentation should be checked for information on specific commands, functions, and escape character that can be used.
+telnet ports
+many telnet clients also include a third option, the port on which the connection should take place.  normally, port 23 is the default telnet port the user never has to think about it.  but sometimes it's desirable to telnet to a different port on a system, where there may be a service available, or to aid in debugging a problem.  using
+telnet somewhere.domain port
+will connect the user to the given port on the system somewhere.domain.  many libraries use this port method to offer their facilities to the general internet community other services are also available.  for instance, one would type
+telnet martini.eecs.umich.edu 3000
+to connect to the geographic server at the university of michigan geographic server.  other such port connections follow the same usage.
+
+publicly accessible libraries
+over the last several years, most university libraries have switched from a manual card catalog system to computerized library catalogs. the automated systems provide users with easily accessible and up-to-date information about the books available in these libraries. this has been further improved upon with the advent of local area networks, dialup modems, and wide area networks.  now many of us can check on our local library's holdings or that of a library halfway around the world
+many, many institutions of higher learning have made their library catalogs available for searching by anyone on the internet.  they include boston university, the colorado alliance of research libraries carl, and london university king's college.
+to include a listing of some of the existing sites would not only be far too long for this document, it would soon be out of date. instead, several lists are being maintained and are available either by mail or via ftp.  also, the internet resource guide irg also describes a few libraries that are accessible---irg for further information.
+art st. george and  ron larsen are maintaining a list of internet-accessible libraries and databases often referred to as the st. george directory.  it began with only library catalogs but has expanded to include sections on campus-wide information systems, and even bulletin board systems that are not on the internet.  the library catalog sections are divided into those that are free, those that charge, and international i.e. non-u.s. catalogs they are arranged by state, province, or country within each section.  there is also a section giving dialup information for some of the library catalogs. it's available for ftp anonymous ftp on nic.cerf.net in the directory cerfnetcerfnetinfolibrarycatalog.  the file internet-catalogs has a date suffix check for the most current date.  the information is updated periodically.
+billy barron, systems manager at the university of north texas, produces a directory as an aid to his user community.  it complements the st. george guide by providing a standard format for all systems which lists the internet address, login instructions, the system vendor, and logoff information.  the arrangement is alphabetic by organization name.  it's available for ftp on vaxb.acs.unt.edu in the subdirectory library as the file libraries.txt.
+for announcements of new libraries being available and discussion on related topics, consult the usenet newsgroup comp.internet.library usenet news to learn how to read news.
+
+bulletin board systems
+the cleveland freenet
+freenets are open-access, free, community computer systems.  one such system is the cleveland freenet, sponsored by cwru case western reserve university.  anyone and everyone is welcome to join and take part in the exciting project---that of a national telecomputing public network, where everyone benefits.  there's no charge for the registration process and no charge to use the system.
+to register, telnet to any one of
+freenet-in-a.cwru.edu freenet-in-b.cwru.edu freenet-in-c.cwru.edu
+after you're connected, choose the entry on the menu that signifies you're a guest user.  another menu will follow select apply for an account, and you'll be well on your way to being a freenet member.
+you will need to fill out a form and send it to them through the postal service---your login id and password will be created in a few days.  at that point you're free to use the system as you wish.  they provide multi-user chat, email, usenet news, and a variety of other things to keep you occupied for hours on end.
+
+directories
+there are a few systems that are maintained to provide the internet community with access to lists of information---users, organizations, etc.  they range from fully dedicated computers with access to papers and research results, to a system to find out about the faculty members of a university.
+
+knowbot
+knowbot is a master directory that contains email address information from the nic whois database whois, the psi white pages pilot project, the nysernet x.500 database and mci mail.  most of these services are email registries themselves, but knowbot provides a very comfortable way to access all of them in one place. telnet to nri.reston.va.us on port 185.
+
+white pages
+psi maintains a directory of information on individuals.  it will list the person's name, organization, and email address if it is given. telnet to wp.psi.net and log in as fred.  the white pages project also includes an interface to use xwindows remotely.
+faculty and staff listings
+many universities offer access to information on current faculty and staff.  included are
+cornell          telnet to cuinfo.cornell.edu on port 3000. nc state         telnet to ccvax1.cc.ncsu.edu and log in as info. rutgers          telnet to hangout.rutgers.edu on port 98. u of maryland    telnet to umail.umd.edu and log in as lookup. unc chapel hill  telnet to info.acs.unc.edu and log in as info. yale             telnet to yalevm.ycc.yale.edu on port 300.
+
+databases
+for information on database services, commercial databases. not all databases on the internet require payment for use, though. there do exist some, largely research-driven databases, which are publicly accessible.  new ones spring up regularly.
+to find out more about the databases in this section, contact the people directly responsible for them.  their areas of concentration and the software used to implement them are widely disparate, and are probably beyond the author's expertise.  also, don't forget to check with your local library---the reference librarian there can provide information on conventional resources, and possibly even those available over the internet they are becoming more common.
+colorado alliance of research libraries carl
+the colorado alliance of research libraries carl, in association with carl systems inc., operates a public access catalog of services. offered are a number of library databases, including searches for government periodicals, book reviews, indices for current articles, and access to to other library databases around the country.  other services are available to carl members including an online encyclopedia.  telnet to pac.carl.org, or write to helpcarl.org for more details.
+
+penpages
+penpages is an agriculturally-oriented database administered by pennsylvania state university.  information entered into penpages is provided by numerous sources including the pennsylvania dept. of agriculture, rutgers university, and penn state.  easy-to-use menus guide users to information ranging from cattle and agricultural prices to current weather information, from health information to agricultural news from around the nation.  a keyword search option also allows users to search the database for related information and articles.  the database is updated daily, and a listing of most recent additions is displayed after login.  telnet to psupen.psu.edu and log in as the user pnotpa.
+clemson univ. forestry  agricultural network
+clemson maintains a database similar to penpages in content, but the information provided tends to be localized to the southeastern united states.  a menu-driven database offers queries involving the weather, food, family, and human resources.  telnet to eureka.clemson.edu and log in as public.  you need to be on a good vt100 emulator or a real vt terminal.
+university of maryland info database
+the computer science department of the university of maryland maintains a repository of information on a wide variety of topics. they wish to give a working example of how network technology can and should provide as much information as possible to those who use it. telnet to info.umd.edu and log in as info.  the information contained in the database is accessible through a screen-oriented interface, and everything therein is available via anonymous ftp.
+there is a mailing list used to discuss the umd info database, welcoming suggestions for new information, comments on the interface the system provides, and other related topics.  send mail to listservumdd.umd.edu with a body of
+subscribe info-l your full name
+listservs for more information on using the listserv system.
+university of michigan weather underground
+the university of michigan's department of atmospheric, oceanic,  space sciences maintains a database of weather and related information for the united states and canada.  available are current weather conditions and forecasts for cities in the u.s., a national weather summary, ski conditions, earthquake and hurricane updates, and a listing of severe weather conditions.  telnet to madlab.sprl.umich.edu on port 3000 to use the system.
+
+geographic name server
+a geographic database listing information for cities in the united states and some international locations is maintained by merit, inc. the database is searchable by city name, zip code, etc.  it will respond with a lot of information the area code, elevation, time zone, and longitude and latitude are included.  for example, a query of 19013 yields
+0 chester 1 42045 delaware 2 pa pennsylvania 3 us united states f 45 populated place l 39 50 58 n  75 21 22 w p 45794 e 22 z 19013 z 19014 z 19015 z 19016 ..
+to use the server, telnet to martini.eecs.umich.edu on port 3000.  the command help will yield further instructions, along with an explanation for each of the fields in a reponse.
+fedix---minority scholarship information
+fedix is an on-line information service that links the higher education community and the federal government to facilitate research, education, and services. the system provides accurate and timely federal agency information to colleges, universities, and other research organizations.  there are no registration fees and no access charges for fedix whatsoever.
+fedix offers the minority on-line information service molis, a database listing current information about black and hispanic colleges and universities.
+daily information updates are made on federal education and research programs, scholarships, fellowships, and grants, available used research equipment, and general information about fedix itself.  to access the database, telnet to fedix.fie.com and log in as fedix.
+
+science  technology information system
+the stis is maintained by the national science foundation nsf, and provides access to many nsf publications.  the full text of publications can be searched online and copied from the system, which can accommodate up to ten users at one time.  telnet to stis.nsf.gov and log in as public.  everything on the system is also available via anonymous ftp.  for further information, contact
+stis, office of information systems, room 401 national science foundation 1800 g. street, n.w. washington, d.c.  20550 stis-requestnsf.gov 202 357-7492 202 357-7663 fax
+
+ocean network information center
+the university of delaware college of marine studies offers access to an interactive database of research information covering all aspects of marine studies, nicknamed oceanic.  this includes the world oceanic circulation experiment woce information and program information, research ship schedules and information, and a who's who of email and mailing addresses for oceanic studies.  data from a variety of academic institutions based on research studies is also available. telnet to delocn.udel.edu and log in as info.
+
+nasaipac extragalactic database ned
+the nasaipac extragalactic database ned is an ongoing project, funded by nasa, to make data and literature on extragalactic objects available over computer networks.  ned is an object-oriented database which contains extensive information for nearly 132,000 extragalactic objects taken from about major catalogs of galaxies, quasars, infrared and radio sources.  ned provides positions, names, and other basic data e.g. magnitude types, sizes and redshifts as well as bibliographic references and abstracts.  searches can be done by name, around a name, and on an astronomical position.  ned contains a tutorial which guides the user through the retrieval process.  telnet to ipac.caltech.edu and log in as ned.
+u.s. naval observatory automated data service
+operated by the u.s. naval observatory in washington, d.c., this automated data service provides database access to information ranging from current navigational satellite positioning, astronomical data, and software utilities. a wide variety of databases can be searched and instructions for file transfer are given.  telnet to tycho.usno.navy.mil and log in as ads.
+my consciousness suddenly switched locations, for the first time in my life, from the vicinity of my head and body to a point about twenty feet away from where i normally see the world. howard rheingold, virtual reality p255
+
+various tools
+new and interesting ways to use the internet are being dreamed up every day.  as they gain wide-spread use, some methods become near-standard or actual written standard tools for internet users to take advantage of.  a few are detailed here there are undoubtedly others, and new ideas spring up all the time.  an active user of the internet will discover most of the more common ones in time.  usually, these services are free.  commercial services for applications that are commercially available over the internet.
+usenet is often used to announce a new service or capability on the internet.  in particular, the groups comp.archives and comp.protocols.tcp-ip are good places to look.  information will drift into other areas as word spreads.  usenet news for information on reading news.
+
+finger
+on many systems there exists the finger command, which yield information about each user that's currently logged in.  this command also has extensions for use over the internet, as well.  under normal circumstances, the command is simply finger for a summary of who's logged into the local system, or finger username for specific information about a user. it's also possible to go one step further and go onto the network.  the general usage is
+
+finger hostname
+to see who's currently logged in at widener university, for instance, use
+finger cs.widener.edu cs.widener.edu login       name              tty idle    when            where brendan  brendan kehoe         p0      fri 0214  tattoo.cs.widene sven     sven heinicke         p1      fri 0416  xyplex3.cs.widen
+to find out about a certain user, they can be fingered specifically and need not be logged in
+finger bartcs.widener.edu cs.widener.edu login name bart                        in real life bart simpson directory homespringfieldbart       shell binunderachiever affiliation brother of lisa            home system channel29.fox.org last login thu may 23 1214 edt on ttyp6 from channel29.fox.org. no unread mail project to become a fluff cartoon character. plan don't have a cow, man.
+please realize that some sites are very security conscious, and need to restrict the information about their systems and users available to the outside world.  to that end, they often block finger requests from outside sites---so don't be surprised if fingering a computer or a user returns with connection refused.
+
+internet relay chat
+the lamont view server system on lamont.ldgo.columbia.edu in pubgb.tar.z.
+
+ping
+the ping command allows the user to check if another system is currently up and running.  the general form of the command is ping system. the usage will, again, vary. for example,
+ping cs.widener.edu
+will tell you if the main machine in widener university's computer science lab is currently online we certainly hope so.
+many implementations of ping also include an option to let you see how fast a link is running to give you some idea of the load on the network.  for example
+ping -s cs.swarthmore.edu ping cs.swarthmore.edu 56 data bytes 64 bytes from 130.58.68.1 icmpseq0 ttl251 time66 ms 64 bytes from 130.58.68.1 icmpseq1 ttl251 time45 ms 64 bytes from 130.58.68.1 icmpseq2 ttl251 time46 ms c --- cs.swarthmore.edu ping statistics --- 3 packets transmitted, 3 packets received, 0 packet loss round-trip minavgmax  455266 ms
+this case tells us that for cs.swarthmore.edu it takes about 46 milliseconds for a packet to go from widener to swarthmore college and back again.  it also gives the average and worst-case speeds, and any packet loss that may have occurred e.g. because of network congestion.
+while ping generally doesn't hurt network performance, you shouldn't use it too often---usually once or twice will leave you relatively sure of the other system's state.
+
+talk
+sometimes email is clumsy and difficult to manage when one really needs to have an interactive conversation.  the internet provides for that as well, in the form of talk. two users can literally see each other type across thousands of miles.
+to talk with bart simpson at widener, one would type
+talk bartcs.widener.edu
+which would cause a message similar to the following to be displayed on bart's terminal
+message from talkdaemoncs.widener.edu at 2145 ... talk connection requested by joeee.someplace.edu talk respond with  talk joeee.someplace.edu
+bart would, presumably, respond by typing talk joeee.someplace.edu. they could then chat about whatever they wished, with instantaneous response time, rather than the write-and-wait style of email.  to leave talk, on many systems one would type ctrl-c hold down the control key and press c.  check local documentation to be sure.
+there are two different versions of talk in common use today.  the first, dubbed old talk, is supported by a set of unix systems most notably, those currently sold by sun.  the second, ntalk aka new talk, is more of the standard.  if, when attempting to talk with another user, it responds with an error about protocol families, odds are the incompatibilities between versions of talk is the culprit.  it's up to the system administrators of sites which use the old talk to install ntalk for their users.
+
+wide area information servers wais
+
+the whois database
+the main whois database is run at the network information center nic. the whois command will let you search a database of every registered domain e.g. mit.edu and of registered users. it's primarily used by system postmasters or listowners to find the points of contact for a site, to let them know of a problem or contact them for one reason or another.  you can also find out their postal address. for example
+whois mit.edu massachusetts institute of technology mit mit.edu             18.72.2.1 massachusetts institute of technology mit-dom                   mit.edu
+note that there are two entries for mit.edu we'll go for the second.
+whois mit-dom massachusetts institute of technology mit-dom cambridge, ma 02139
+domain name mit.edu
+administrative contact, technical contact, zone contact schiller, jeffrey i.  jis  jismit.edu 617 253-8400
+record last updated on 22-jun-88.
+domain servers in listed order strawb.mit.edu               18.71.0.151 w20ns.mit.edu                18.70.0.160 bitsy.mit.edu                18.72.0.3 lithium.lcs.mit.edu          18.26.0.121
+to see this host record with registered users, repeat the command with a star '' before the name or, use '' to show just the registered users.
+much better  now this information sought, possibly, by a system administrator can be used to find out how to notify mit of a security issue or problem with connectivity.
+queries can be made for individuals as well the following would yield an entry for the author
+whois brendan kehoe, brendan bk59         brendancs.widener.edu widener university department of computer science kirkbride 219 p.o. box 83 widener university chester, pa 19013 215499-4011
+record last updated on 02-may-91.
+included is the author's name, his handle a unique sequence of letters and numbers, information on how to contact him, and the last time the record was modified in any way.
+anyone can register with the whois database.  people who are administrative or technical contacts for domains are registered automatically when their domain applications are processed.  for normal users, one must simply fill out a form from the nic.  ftp to nic.ddn.mil and get the file netinfouser-template.txt. the completed form should be mailed to registrarnic.ddn.mil.
+other uses of whois
+also, many educational sites run whois servers of their own, to offer information about people who may be currently on the staff or attending the institution.  to specify a whois server, many implementations include some sort of option or qualifier---in vms under multinet, it's host, in unix -h.  to receive information about using the stanford server, one might use the command
+whois -h stanford.edu help
+a large list of systems offering whois services is being maintained by matt power of mit mhpowerstan.mit.edu.  it is available via anonymous ftp from sipb.mit.edu, in the directory pubwhois.  the file is named whois-servers.list.
+the systems available include, but are certainly not limited to, syracuse university syr.edu, new york university acfcluster.nyu.edu, the university of california at san diego ucsd.edu, and stanford university stanford.edu.
+fingers were made before forks. jonathan swift, polite conversation
+
+commercial services
+many services can be accessed through the internet.  as time progresses and more outlets for commercial activity appear, once-restricted traffic by the nsfnet acceptable use policy may now flow freely.  now that there are other networks for that information to travel on, businesses are making their move.
+
+internet service providers
+providers alternet, psi, etc...
+supercomputers the internet resource guide irg contains a chapter on computer time that's available for a fee.  rather than reproduce it here, which would fast become out-of-date as well as triple the size of this guide, it's suggested that the reader consult the irg if such services are of interest.
+
+electronic journals
+the association of research libraries arl publishes a hard-copy directory of electronic journals, newsletters, and scholarly discussion lists.  it is a compilation of entries for hundreds of
+sts, dozens of journals and newsletters, and a many other titles, including newsletter-digests, into one reference source.  each entry includes instructions on how to access the referenced publication or list.
+the documents are available electronically by sending the commands
+get ejournl1 directry get ejournl2 directry
+to the server at listservottawa.bitnet. listservs for further instructions on using a listserv.
+the directory, along with a compilation by diane kovacs called directories of academic e-mail conferences, is available in print and on diskette dos wordperfect and macword from
+office of scientific  academic publishing association of research libraries 1527 new hampshire avenue, nw washington, dc  20036 arlhqumdc.bitnet 202 232--2466 202 462--7849 fax
+the arl is a not-for-profit organization representing over one hundred research libraries in the united states and canada.  the publication is available to arl members for 10 and to non-members for 20 add 5 postage per directory for foreign addresses.  orders of six or more copies will receive a 10 discount all orders must be prepaid and sent to the arl.
+
+commercial databases
+the american institute of physics maintains the physics information network.  it contains the bibliographic spin and general physics advanced abstracts databases.  also available is access to bulletin boards and several searchable lists job notices, announcements, etc. telnet to pinet.aip.org new users must log in as new and give registration information.
+some of the databases accessible through wais wais are available for a fee.
+
+clarinet news
+clarinet's an electronic publishing network service that provides professional news and information, including live upi wireservice news, in the usenet file format.
+clarinet lets you read an electronic newspaper right on the local system you can get timely industry news, technology related wirestories, syndicated columns and features, financial information, stock quotes and more.
+clarinet's provided by using the usenet message interchange format, and is available via uucp and other delivery protocols, including nntp.
+the main feature is clarinews, an electronic newspaper, gathered live from the wire services of united press international upi.  clarinews articles are distributed in 100 newsgroups based on their subject matter, and are keyworded for additional topics and the geographical location of the story.  clarinews includes headlines, industry news, box scores, network tv schedules, and more. the main products of clarinews are
+clarinews general, the general newspaper with news, sports, and features, averaging about 400 stories per day.
+techwire, special groups for stories on science, technology, and industry stories around them.
+clarinews-biz, business and financial stories.
+newsbytes, a daily computer industry newsmagazine.
+syndicated columns, including dave barry humor and mike royko opinion.
+full information on clarinet, including subscription information, is available from
+clarinet communications corp. 124 king st. north waterloo, ontario  n2j 2x8 infoclarinet.com 800 use-nets
+or with anonymous ftp in the directory clarinet on ftp.uu.net anonymous ftp.
+needless to say, aristotle did not envisage modern finance. frederick copleston, s.j. a history of philosophy vol 1 greece  rome part ii, p95
+
+things you'll hear about
+there are certain things that you'll hear about shortly after you start actively using the internet.  most people assume that everyone's familiar with them, and they require no additional explanation.  if only that were true
+this section addresses a few topics that are commonly encountered and asked about as a new user explores cyberspace.  some of them are directly related to how the networks are run today other points are simply interesting to read about.
+
+the internet worm
+from a letter by severo m. ornstein, in acm june 89 vol32 no6 and the appeal notice
+on november 2, 1988, robert morris, jr., a graduate student in computer science at cornell, wrote an experimental, self-replicating, self-propagating program called a worm and injected it into the internet.  he chose to release it from mit, to disguise the fact that the worm came from cornell.  morris soon discovered that the program was replicating and reinfecting machines at a much faster rate than he had anticipated---there was a bug.  ultimately, many machines at locations around the country either crashed or became catatonic. when morris realized what was happening, he contacted a friend at harvard to discuss a solution.  eventually, they sent an anonymous message from harvard over the network, instructing programmers how to kill the worm and prevent reinfection.  however, because the network route was clogged, this message did not get through until it was too late.  computers were affected at many sites, including universities, military sites, and medical research facilities.  the estimated cost of dealing with the worm at each installation ranged from 200 to more than 53,000. derived in part from a letter by severo m. ornstein, in the communications of the acm, vol 32 no 6, june 1989.
+the program took advantage of a hole in the debug mode of the unix sendmail program, which runs on a system and waits for other systems to connect to it and give it email, and a hole in the finger daemon fingerd, which serves finger requests finger.  people at the university of california at berkeley and mit had copies of the program and were actively disassembling it returning the program back into its source form to try to figure out how it worked.
+teams of programmers worked non-stop to come up with at least a temporary fix, to prevent the continued spread of the worm.  after about twelve hours, the team at berkeley came up with steps that would help retard the spread of the virus.  another method was also discovered at purdue and widely published.  the information didn't get out as quickly as it could have, however, since so many sites had completely disconnected themselves from the network.
+after a few days, things slowly began to return to normalcy and everyone wanted to know who had done it all.  morris was later named in the new york times as the author though this hadn't yet been officially proven, there was a substantial body of evidence pointing to morris.
+robert t. morris was convicted of violating the computer fraud and abuse act title 18, and sentenced to three years of probation, 400 hours of community service, a fine of 10,050, and the costs of his supervision.  his appeal, filed in december, 1990, was rejected the following march.
+
+the cuckoo's egg
+first in an article entitled stalking the wily hacker, and later in the book the cuckoo's egg, clifford stoll detailed his experiences trying to track down someone breaking into a system at lawrence berkeley laboratory in california. see the bibliography for full citations.
+a 75-cent discrepancy in the lab's accounting records led stoll on a chase through california, virginia, and europe to end up in a small apartment in hannover, west germany.  stoll dealt with many levels of bureaucracy and red tape, and worked with the fbi, the cia, and the german bundespost trying to track his hacker down.
+the experiences of stoll, and particularly his message in speaking engagements, have all pointed out the dire need for communication between parties on a network of networks.  the only way everyone can peacefully co-exist in cyberspace is by ensuring rapid recognition of any existing problems.
+
+organizations
+the indomitable need for humans to congregate and share their common interests is also present in the computing world.  user groups exist around the world, where people share ideas and experiences. similarly, there are organizations which are one step above user groups that is to say, they exist to encourage or promote an idea or set of ideas, rather than support a specific computer or application of computers.
+
+the association for computing machinery
+the association for computing machinery the acm was founded in 1947, immediately after eckert and mauchly unveiled one of the first electronic computers, the eniac, in 1946.  since then, the acm has grown by leaps and bounds, becoming one of the leading educational and scientific societies in the computer industry.
+the acm's stated purposes are
+to advance the sciences and arts of information processing
+to promote the free interchange of information about the sciences and arts of information processing both among specialists and among the public
+to develop and maintain the integrity and competence of individuals engaged in the practices of the sciences and arts of information processing.
+membership in the acm has grown from seventy-eight in september, 1947, to over 77,000 today.  there are local chapters around the world, and many colleges and universities endorse student chapters.  lecturers frequent these meetings, which tend to be one step above the normal user group gathering.  a large variety of published material is also available at discounted prices for members of the association.
+the acm has a number of special interest groups sigs that concentrate on a certain area of computing, ranging from graphics to the ada programming language to security.  each of the sigs also publishes its own newsletter.  there is a usenet group, comp.org.acm, for the discussion of acm topics.  usenet news for more information on reading news.
+for more information and a membership application, write to
+assocation for computing machinery 1515 broadway new york city, ny  10036 acmhelpacmvm.bitnet 212 869-7440
+computer professionals for social responsibility from their letter to prospective members
+the cpsr is an alliance of computer professionals concentrating on certain areas of the impact of computer technology on society.  it traces its history to the fall of 1981, when several researchers in palo alto, california, organized a lunch meeting to discuss their shared concerns about the connection between computing and the nuclear arms race.  out of that meeting and the discussions which followed, cpsr was born, and has been active ever since. this section is part of the cpsr's letter to prospective members.
+the national cpsr program focuses on the following project areas
+reliability and risk  this area reflects on the concern that overreliance on computing technology can lead to unacceptable risks to society.  it includes, but isn't limited to, work in analyzing military systems such as sdi.
+civil liberties and privacy  this project is concerned with such topics as the fbi national crime information center, the growing use of databases by both government and private industry, the right of access to public information, extension of first amendment rights to electronic communication, and establishing legal protections for privacy of computerized information.
+computers in the workplace  the cpsr workplace project has concentrated its attention on the design of software for the workplace, and particularly on the philosophy of participatory design, in which software designers work together with users to ensure that systems meet the actual needs of that workplace.
+the 21st century project this is a coalition with other professional organizations working towards redirecting national research priorities from concentrating on military issues to anticipating and dealing with future problems as science and technology enter the next century.
+for more information on the cpsr, contact them at
+computer professionals for social responsibility p.o. box 717 palo alto, ca  94302 cpsrcsli.stanford.edu 415 322--3778 415 322--3798 fax
+
+the electronic frontier foundation
+the electronic frontier foundation eff was established to help civilize the electronic frontier---the cyberspacial medium becoming ever-present in today's society to make it truly useful and beneficial not just to a technical elite, but to everyone and to do this in a way which is in keeping with the society's highest traditions of the free and open flow of information and communication. this section was derived from eff.about, available along with other material via anonymous ftp from ftp.eff.org
+the mission of the eff is to engage in and support educational activities which increase popular understanding of the opportunities and challenges posed by developments in computing and telecommunications
+to develop among policy-makers a better understanding of the issues underlying free and open telecommunications, and support the creation of legal and structural approaches which will ease the assimilation of these new technologies by society
+to raise public awareness about civil liberties issues arising from the rapid advancement in the area of new computer-based communications media and, where necessary, support litigation in the public interest to preserve, protect, and extend first amendment rights within the realm of computing and telecommunications technology
+to encourage and support the development of new tools which will endow non-technical users with full and easy access to computer-based telecommunications
+the usenet newsgroups comp.org.eff.talk and comp.org.eff.news are dedicated to discussion concerning the eff.  they also have mailing list counterparts for those that don't have access to usenet, eff-talk-requesteff.org and eff-news-requesteff.org.  the first is an informal arena aka a normal newsgroup where anyone may voice his or her opinions.  the second, comp.org.eff.news, is a moderated area for regular postings from the eff in the form of effector online.  to submit a posting for the effector online, or to get general information about the eff, write to effeff.org.  there is also a wealth of information available via anonymous ftp on ftp.eff.org.
+the eff can be contacted at
+the electronic frontier foundation, inc. 155 second st. 1 cambridge, ma  02141 effeff.org 617 864-0665 617 864-0866 fax
+
+the free software foundation
+the free software foundation was started by richard stallman creator of the popular gnu emacs editor. it is dedicated to eliminating restrictions on copying, redistributing, and modifying software.
+the word free in their name does not refer to price it refers to freedom.  first, the freedom to copy a program and redistribute it to your neighbors, so that they can use it as well as you.  second, the freedom to change a program, so that you can control it instead of it controlling you for this, the source code must be made available to you.
+the foundation works to provide these freedoms by developing free compatible replacements for proprietary software.  specifically, they are putting together a complete, integrated software system called gnu that is upward-compatible with unix. as an aside, the editor of the gnu project, emacs, contains a built-in lisp interpreter and a large part of its functionality is written in lisp. the name gnu is itself recursive the mainstay of the lisp language it stands for gnu's not unix.
+when it is released, everyone will be permitted to copy it and distribute it to others.  in addition, it will be distributed with source code, so you will be able to learn about operating systems by reading it, to port it to your own machine, and to exchange the changes with others.
+for more information on the free software foundation and the status of the gnu project, or for a list of the current tasks that still need to be done, write to gnuprep.ai.mit.edu.
+
+the ieee
+need ieee...
+
+the league for programming freedom
+the league for programming freedom is a grass-roots organization of professors, students, businessmen, programmers and users dedicated to bringing back the freedom to write programs, which they contend has been lost over the past number years.  the league is not opposed to the legal system that congress intended--copyright on individual programs. their aim is to reverse the recent changes made by judges in response to special interests, often explicitly rejecting the public interest principles of the constitution.
+the league works to abolish the new monopolies by publishing articles, talking with public officials, boycotting egregious offenders, and in the future may intervene in court cases.  on may 24, 1989, the league picketed lotus headquarters because of their lawsuits, and then again on august 2, 1990.  these marches stimulated widespread media coverage for the issue.  they welcome suggestions for other activities, as well as help in carrying them out.
+for information on the league and how to join, write to
+league for programming freedom 1 kendall square 143 p.o. box 9171 cambridge, ma  02139 leagueprep.ai.mit.edu
+
+networking initiatives
+research and development are two buzz words often heard when discussing the networking field---everything needs to go faster, over longer distances, for a lower cost.  to keep current, one should read the various trade magazines and newspapers, or frequent the networking-oriented newsgroups of usenet.  if possible, attend trade shows and symposia like usenix, interop, et. al.
+isdn
+nren
+the national research and education network nren is a five-year project approved by congress in the fall of 1991.  it's intended to create a national electronic super-highway.  the nren will be 50 times faster than the fastest available networks at the time of this writing.  proponents of the nren claim it will be possible to transfer the equivalent of the entire text of the encyclopedia britannica in one second.  further information, including the original text of the bill presented by senator al gore d--tn, is available through anonymous ftp to nis.nsf.net, in the directory nsfnet.  in addition, vint cerf wrote on the then-proposed nren in rfc-1167, thoughts on the national research and education network. rfcs for information on obtaining rfcs.
+a mailing list, nren-discussuu.psi.com, is available for discussion of the nren write to nren-discuss-requestuu.psi.com to be added.
+to talk in publick, to think in solitude, to read and to hear, to inquire, and to answer inquiries, is the business of a scholar. samuel johnson chapter viii the history of rasselas, prince of abissinia
+
+finding out more
+internet resource guide
+the nsf network service center nnsc compiles and makes available an internet resource guide irg.  the goal of the guide is to increase the visibility of various internet resources that may help users do their work better.  while not yet an exhaustive list, the guide is a useful compendium of many resources and can be a helpful reference for a new user.
+resources listed are grouped by types into sections.  current sections include descriptions of online library catalogs, data archives, online white pages directory services, networks, network information centers, and computational resources, such as supercomputers.  each entry describes the resource, identifies who can use the resource, explains how to reach the local network via the internet, and lists contacts for more information.  the list is distributed electronically by the nnsc.  to receive a guide, or to get on a mailing list that alerts you to when it is updated, send a message to resource-guide-requestnnsc.nsf.net.
+the current edition of the irg is available via anonymous ftp from nnsc.nsf.net, in the directory resource-guide.
+
+requests for comments
+the internal workings of the internet are defined by a set of documents called rfcs request for comments.  the general process for creating an rfc is for someone wanting something formalized to write a document describing the issue and mailing it to jon postel postelisi.edu.  he acts as a referee for the proposal.  it is then commented upon by all those wishing to take part in the discussion electronically, of course.  it may go through multiple revisions. should it be generally accepted as a good idea, it will be assigned a number and filed with the rfcs.
+the rfcs can be divided into five groups required, suggested, directional, informational and obsolete.  required rfcs e.g., rfc-791, the internet protocol must be implemented on any host connected to the internet.
+suggested rfcs are generally implemented by network hosts.  lack of them does not preclude access to the internet, but may impact its usability.  rfc-793, transmission control protocol, is a must for those implementing tcp.
+directional rfcs were discussed and agreed to, but their application has never come into wide use.  this may be due to the lack of wide need for the specific application rfc-937, the post office protocol or that, although technically superior, ran against other pervasive approaches rfc-891, hello.  it is suggested that, should the facility be required by a particular site, an implementation be done in accordance with the rfc.  this ensures that, should the idea be one whose time has come, the implementation will be in accordance with some standard and will be generally usable.
+informational rfcs contain factual information about the internet and its operation rfc-990, assigned numbers.
+there is also a subset of rfcs called fyis for your information. they are written in a language much more informal than that used in the other, standard rfcs.  topics range from answers to common questions for new and experienced users to a suggested bibliography.
+finally, as the internet has grown and technology has changed, some rfcs become unnecessary.  these obsolete rfcs cannot be ignored, however.  frequently when a change is made to some rfc that causes a new one to obsolete others, the new rfc only contains explanations and motivations for the change.  understanding the model on which the whole facility is based may involve reading the original and subsequent rfcs on the topic.
+rfcs and fyis are available via ftp from many sources, including
+the nic.ddn.mil archive, as rfcrfc-xxxx.txt, where xxxx is the number of the rfc.
+from ftp.uu.net, in the directory rfc.
+they're also available through mail by writing to servicenic.ddn.mil, with a subject line of send rfc-xxxx.txt, again with xxxx being the rfc number.
+knowledge is of two kinds.  we know a subject ourselves, or we know where we can find information upon it. samuel johnson letter to lord chesterfield february, 1755 a book of quotes said april 18, 1775 .. the book of johnson's works said it's 1755 i'll go with the latter.
+
+conclusion
+this guide is far from complete---the internet changes on a daily if not hourly basis.  however, this booklet should provide enough information to make the incredible breadth and complexity of the internet a mite less imposing.  coupled with some exploration and experimentation, every user has the potential to be a competent net citizen, using the facilities that are available to their fullest.
+you, the reader, are strongly encouraged to suggest improvements to any part of this booklet.  if something was unclear, left you with doubts, or wasn't addressed, it should be fixed.  if you find any problems, inaccuracies, spelling errors, etc., please report them to
+brendan kehoe department of computer science widener university chester, pa 19013
+internet guide-bugscs.widener.edu uucp ...widenerguide-bugs
+if you are interested in future updates to this guide aside from normal new editions, discussion about information to be included or removed, etc., write to guide-requestcs.widener.edu to be placed on a mailing list for such things.
+dots is actually . . . .' i've seed de first an de last dots i seed de beginnin, en now i sees de endin. william faulkner the sound  the fury april 8, 1928
+
+getting to other networks
+inter-connectivity has been and always will be one of the biggest goals in computer networking.  the ultimate desire is to make it so one person can contact anyone else no matter where they are.  a number of gateways between networks have been set up.  they include
+applelink quantum services sells access to applelink, which is similar to quantumlink for commodore computers and pclink for ibm pcs and compatibles.  it also provides email access through the address userapplelink.apple.com.
+attmail att sells a commercial email service called attmail.  its users can be reached by writing to userattmail.com.
+bix users on bix the byte information exchange can be reached through the das gateway at usercibix.das.net.
+compuserve ci to reach a user on the commercial service compuserve, you must address the mail as xxxxx.xxxcompuserve.com, with xxxxx.xxx being their compuserve user id.  normally compuserve ids are represented as being separated by a comma like 71999,141 since most mailers don't react well to having commas in addresses, it was changed to a period.  for the above address, mail would be sent to 71999.141compuserve.com.
+easynet digital sells a service called easynet users that subscribe to it can be reached with the addresses userhost.enet.dec.com or userhost.enetdecwrl.dec.com.
+fidonet the fidonet computer network can be reached by using a special addressing method.  if john smith is on the node 123.4 on fidonet, his or her email address would be john.smithp4.f3.n2.z1.fidonet.org notice how the numbers fall in place.
+mci mail mci also sells email accounts similar to attmail. users can be reached with usermcimail.com.
+peacenet users on the peacenet network can be reached by writing to userigc.org.
+the well users on the service the well can be reached by writing to userwell.sf.ca.us.  the well is directly connected to the internet.
+this table is far from complete.  in addition to sites not being listed, some services are not nor do they plan to be accessible from the outside like prodigy others, like genie, are actively investigating the possibility of creating a gateway into their system. for the latest information, consult a list called the inter-network mail guide.  it's available from a number of ftp sites, including uunet anonymous ftp, for more information on getting a copy of it using anonymous ftp.
+
+retrieving files via email
+for those who have a connection to the internet, but cannot ftp, there do exist a few alternatives to get those files you so desperately need.  when requesting files, it's imperative that you keep in mind the size of your request---odds are the other people who may be using your link won't be too receptive to sudden bursts of really heavy traffic on their normally sedate connection.
+
+archive servers
+an alternative to the currently well over-used ftpmail system is taking advantage of the many archive servers that are presently being maintained.  these are programs that receive email messages that contain commands, and act on them.  for example, sending an archive server the command help will usually yield, in the form of a piece of email, information on how to use the various commands that the server has available.
+one such archive server is servicenic.ddn.mil.  maintained by the network information center nic in chantilly, va, the server is set up to make all of the information at the nic available for people who don't have access to ftp.  this also includes the whois service whois. some sample subject lines for queries to the nic server are
+subject help                          describes available commands. subject rfc 822                       sends a copy of rfc-822. subject rfc index                     sends an index of the available rfcs. subject netinfo domain-template.txt   sends a domain application. subject whois widener                 sends whois information on widener'.
+more information on using their archive server can be obtained by writing to their server address servicenic.ddn.mil with a subject of help.
+there are different brands of archive server, each with its own set of commands and services.  among them there often exists a common set of commands and services e.g. index, help, etc. be that as it may, one should always consult the individual help for a specific server before assuming the syntax---100k surprises can be hard on a system.
+ftp-by-mail servers some systems offer people the ability to receive files through a mock-ftp interface via email.  anonymous ftp for a general overview of how to ftp.  the effects of providing such a service varies, although a rule of thumb is that it will probably use a substantial amount of the available resources on a system.
+the original ftp-by-mail service, bitftp, is available to bitnet users from the princeton node pucc.  it was once accessible to anyone, but had to be closed out to non-bitnet users because of the heavy load on the system.
+in response to this closure, paul vixie designed and installed a system called ftpmail on one of digital's gateway computers, decwrl.dec.com.  write to ftpmaildecwrl.dec.com with help in the body of the letter for instructions on its use. the software is undergoing constant development once it reaches a stable state, other sites will be encouraged to adopt it and provide the service also.
+
+newsgroup creation
+everyone has the opportunity to make a call for votes on the usenet and attempt to create a newsgroup that heshe feels would be of benefit to the general readership.  the rules governing newsgroup creation have evolved over the years into a generally accepted method. they only govern the world groups they aren't applicable to regional or other alternative hierarchies.
+
+discussion
+a discussion must first take place to address issues like the naming of the group, where in the group tree it should go e.g. rec.sports.koosh vs rec.games.koosh, and whether or not it should be created in the first place.  the formal request for discussion rfd should be posted to news.announce.newgroups, along with any other groups or mailing lists at all related to the proposed topic. news.announce.newgroups is moderated.  you should place it first in the newsgroups header, so that it will get mailed to the moderator only.  the article won't be immediately posted to the other newsgroups listed rather, it will give you the opportunity to have the moderator correct any inconsistencies or mistakes in your rfd. he or she will take care of posting it to the newsgroups you indicated.  also the followup-to header will be set so that the actual discussion takes place only in news.groups.  if a user has difficulty posting to a moderated group, he or she may mail submissions intended for news.announce.newgroups to the address announce-newgroupsrpi.edu.
+the final name and charter of the group, and whether it will be moderated or unmoderated, will be determined during the discussion period.  if it's to be moderated, the discussion will also decide who the moderator will be.  if there's no general agreement on these points among those in favor of a new group at the end of 30 days, the discussion will be taken into mail rather than continued posting to news.groups that way, the proponents of the group can iron out their differences and come back with a proper proposal, and make a new request for discussion.
+voting after the discussion period which is mandatory, if it's been determined that a new group really is desired, a name and charter are agreed upon, and it's been determined whether the group will be moderated and by whom, a call for votes cfv should be posted to news.announce.newgroups, along with any other groups that the original request for discussion was posted to.  the cfv should be posted or mailed to the news.announce.newgroups moderator as soon as possible after the discussion ends to keep it fresh in everyone's mind.
+the call for votes should include clear instructions on how to cast a vote.  it's important that it be clearly explained how to both vote for and against a group and be of equivalent difficulty or ease.  if it's easier for you or your administrator, two separate addresses can be used to mail yes and no votes to, providing that they're on the same machine.  regardless of the method, everyone must have a very specific idea of how to get hisher vote counted.
+the voting period can last between 21 and 31 days, no matter what the preliminary results of the vote are.  a vote can't be called off simply because 400 no votes have come in and only two yes votes.  the call for votes should include the exact date that the voting period will end---only those votes arriving on the vote-taker's machine before this date can be counted.
+to keep awareness high, the cfv can be repeated during the vote, provided that it gives the same clear, unbiased instructions for casting a vote as the original it also has to be the same proposal as was first posted.  the charter can't change in mid-vote. also, votes that're posted don't count---only those that were mailed to the vote-taker can be tallied.
+partial results should never be included only a statement of the specific proposal, that a vote is in progress on it, and how to cast a vote.  a mass acknowledgement mass ack or vote ack is permitted however, it must be presented in a way that gives no indication of which way a person voted.  one way to avoid this is to create one large list of everyone who's voted, and sort it in alphabetical order.  it should not be two sorted lists of the yes and no votes, respectively.
+every vote is autonomous.  the votes for or against one group can't be transferred to another, similar proposal.  a vote can only count for the exact proposal that it was a response to.  in particular, a vote for or against a newsgroup under one name can't be counted as a vote for or against another group with a different name or charter, a different moderatedunmoderated status, or, if it's moderated, a different moderator or set of moderators.  whew
+finally, the vote has to be explicit they should be of the form i vote for the group foo.bar as proposed or i vote against the group foo.bar as proposed.  the wording doesn't have to be exact, your intention just has to be clear.
+
+the result of a vote
+at the end of the voting period, the vote-taker has to post to news.announce.newgroups the tally and email addresses of the votes received.  again, it can also be posted to any of the groups listed in the original cfv.  the tally should make clear which way a person voted, so the results can be verified if it proves necessary to do so.
+after the vote result is posted to news.announce.newgroups, there is a mandatory five-day waiting period.  this affords everyone the opportunity to correct any errors or inconsistencies in the voter list or the voting procedure.
+creation of the group
+if, after the waiting period, there are no serious objections that might invalidate the vote, the vote is put to the water test.  if there were 100 more valid yescreate votes than nodon't create votes, and at least two-thirds of the total number of votes are in favor of creation, then a newgroup control message can be sent out often by the moderator of news.announce.newgroups.  if the 100-vote margin or the two-thirds percentage isn't met, the group has failed and can't be created.
+if the proposal failed, all is not lost---after a six-month waiting period a cooling down, a new request for discussion can be posted to news.groups, and the whole process can start over again.  if after a couple of tries it becomes obvious that the group is not wanted or needed, the vote-taker should humbly step back and accept the opinion of the majority.  as life goes, so goes usenet.
